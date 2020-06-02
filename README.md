@@ -1,4 +1,4 @@
-# poemsapp
+# Scribblings
 
 A new Flutter application with backend as Deno and Postgres Database.
 
