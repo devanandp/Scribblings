@@ -1,4 +1,4 @@
-import 'package:poems_app/main_routes.dart';
+import 'package:scribblings/main_routes.dart';
 
 void main() {
   Routes();

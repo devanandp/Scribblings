@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:poems_app/widgets/cards/card.dart';
+import 'package:scribblings/widgets/cards/card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -11,13 +11,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     var container = Container(
       color: Colors.white,
       child: ListView(
         children: <Widget>[
           DashboardCard(),
-          DashboardCard()
         ],
       ),
     );
