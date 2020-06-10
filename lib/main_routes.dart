@@ -10,12 +10,7 @@ import 'screens/home_screen.dart';
 class Routes {
   Routes() {
     runApp(
-      Platform.isIOS
-          ? CupertinoApp(
-              routes: routes,
-              debugShowCheckedModeBanner: false,
-            )
-          : MaterialApp(
+       MaterialApp(
               routes: routes,
               debugShowCheckedModeBanner: false,
             ),

@@ -7,7 +7,8 @@ class PostController extends BaseModel {
   List<FeedCardModel> feedList = [];
 
   allPost() async {
-    print('-----------HERE-----1221');
+
+  print('-----------HERE-----1221');
     try {
       errorMessage = null;
       notifyListeners();
@@ -15,13 +16,13 @@ class PostController extends BaseModel {
            data = await APIHandler.get(
           'api/posts');
       data = json.decode(data);
-
-//      data["data"].forEach((post) {
-//        Map postJsonData = post;
-//        FeedCardModel obj = FeedCardModel.fromJson(postJsonData);
-//        feedList.add(obj);
-//      });
-//print(feedList[1].toJson());
+      data["data"].forEach((post) {
+        Map postJsonData = post;
+        FeedCardModel obj = FeedCardModel.fromJson(postJsonData);
+        feedList.add(obj);
+      });
+      print(feedList[0].poem);
+      print(feedList[1].poem);
 
     } catch (e) {
       print("203 exception here => $e");

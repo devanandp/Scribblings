@@ -1,30 +1,4 @@
 class FeedCardModel {
-  bool success;
-  List<Data> data;
-
-  FeedCardModel({this.success, this.data});
-
-  FeedCardModel.fromJson(Map<String, dynamic> json) {
-    success = json['success'];
-    if (json['data'] != null) {
-      data = new List<Data>();
-      json['data'].forEach((v) {
-        data.add(new Data.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['success'] = this.success;
-    if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
-class Data {
   int id;
   String name;
   String poem;
@@ -34,7 +8,7 @@ class Data {
   int downvoteCount;
   String updatedAt;
 
-  Data(
+  FeedCardModel(
       {this.id,
         this.name,
         this.poem,
@@ -44,7 +18,7 @@ class Data {
         this.downvoteCount,
         this.updatedAt});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  FeedCardModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     poem = json['poem'];
