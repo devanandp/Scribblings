@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:poems_app/screens/about_screen.dart';
-import 'package:poems_app/screens/home_screen.dart';
+import 'package:scribblings/screens/about_screen.dart';
+import 'package:scribblings/screens/home_screen.dart';
 
 class TempBottomNavigation extends StatefulWidget {
   @override
@@ -16,6 +16,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
   final List<Widget> _pages = [
     HomeScreen(),
     AboutScreen(),
+
   ];
 
   int _selectedIndex = 0;
