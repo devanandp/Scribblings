@@ -12,7 +12,6 @@ class PostController extends BaseModel {
     try {
       errorMessage = null;
       isLoading = true;
-//      notifyListeners();
            data = await APIHandler.get(
           'api/posts');
       data = json.decode(data);
