@@ -86,12 +86,11 @@ class _DashboardCardState extends State<DashboardCard> {
                             },
                           ),
                           Text(
-                            widget.feedList.upvoteCount.toString(),
+                           "Takeaway!",
                             style: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue,
-                                fontFamily: "Sacramento",
                                 fontSize: 15),
                           )
                         ],
@@ -116,12 +115,11 @@ class _DashboardCardState extends State<DashboardCard> {
                             },
                           ),
                           Text(
-                            widget.feedList.upvoteCount.toString(),
+                            "Pass it!",
                             style: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue,
-                                fontFamily: "Sacramento",
                                 fontSize: 15),
                           )
                         ],

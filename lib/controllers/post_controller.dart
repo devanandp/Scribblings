@@ -2,13 +2,9 @@ import 'dart:convert';
 import 'package:scribblings/models/feed_card_model.dart';
 import 'package:scribblings/services/Api_handler.dart';
 import 'base_Model.dart';
-
 class PostController extends BaseModel {
   List<FeedCardModel> feedList = [];
-
   allPost() async {
-
-  print('-----------HERE-----1221');
     try {
       errorMessage = null;
       isLoading = true;
@@ -32,6 +28,5 @@ class PostController extends BaseModel {
     isLoading = false;
     notifyListeners();
   }
-
 
 }

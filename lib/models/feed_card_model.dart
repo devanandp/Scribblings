@@ -4,8 +4,6 @@ class FeedCardModel {
   String poem;
   String createdAt;
   String description;
-  int upvoteCount;
-  int downvoteCount;
   String updatedAt;
 
   FeedCardModel(
@@ -14,8 +12,6 @@ class FeedCardModel {
         this.poem,
         this.createdAt,
         this.description,
-        this.upvoteCount,
-        this.downvoteCount,
         this.updatedAt});
 
   FeedCardModel.fromJson(Map<String, dynamic> json) {
@@ -24,8 +20,6 @@ class FeedCardModel {
     poem = json['poem'];
     createdAt = json['createdAt'];
     description = json['description'];
-    upvoteCount = json['upvoteCount'];
-    downvoteCount = json['downvoteCount'];
     updatedAt = json['updatedAt'];
   }
 
@@ -36,8 +30,6 @@ class FeedCardModel {
     data['poem'] = this.poem;
     data['createdAt'] = this.createdAt;
     data['description'] = this.description;
-    data['upvoteCount'] = this.upvoteCount;
-    data['downvoteCount'] = this.downvoteCount;
     data['updatedAt'] = this.updatedAt;
     return data;
   }

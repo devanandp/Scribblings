@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:scribblings/controllers/post_controller.dart';
-import 'package:scribblings/widgets/cards/card.dart';
+
+import '../keys.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,17 +9,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  PostController postController = PostController()..isLoading = true;
+  Color _color;
+  int i = 0;
+  int _hearts = 0;
+  List colorsList = [Colors.redAccent, Colors.yellow, Colors.green];
 
   @override
   void initState() {
-    // TODO: implement initState
-    getData();
     super.initState();
-  }
-
-  getData() async {
-    await postController.allPost();
   }
 
   @override
@@ -38,31 +34,45 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 25),
           ),
         ),
-        body: MultiProvider(
-            providers: [
-              ChangeNotifierProvider(
-                create: (context) => postController,
-              )
-            ],
-            child:
-                Consumer<PostController>(builder: (context, postController, _) {
-              return postController.isLoading
-                  ? Center(
-                      child: CircularProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(
-                          Color.fromARGB(255, 29, 167, 174),
-                        ),
-                      ),
-                    )
-                  : Container(
-                      color: Colors.white,
-                      child: ListView.builder(
-                          itemCount: postController.feedList.length,
-                          itemBuilder: (context, index) {
-                            return DashboardCard(
-                                feedList: postController.feedList[index]);
-                          }),
-                    );
-            })));
+        body: Container(
+            color: Colors.white,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "It`s always Success!",
+                    style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orangeAccent,
+                        fontFamily: "Sacramento",
+                        fontSize: 45),
+                  ),
+                  IconButton(
+                    key: ValueKey(Keys.icon_button),
+                    icon: Icon(Icons.favorite),
+                    iconSize: 55,
+                    color: _color,
+                    onPressed: () {
+                      setState(() {
+                        _color = colorsList[i++];
+                        _hearts++;
+                      });
+                      if (i > 2) i = 0;
+                    },
+                  ),
+                  Text(
+                    "$_hearts",
+                    style: TextStyle(
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                        fontFamily: "Sacramento",
+                        fontSize: 75),
+                  ),
+                ],
+              ),
+            )));
   }
 }

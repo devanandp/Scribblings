@@ -21,6 +21,5 @@ class Routes {
     '/': (BuildContext context) => Splash(),
     '/bottomNavigation' : (BuildContext context) => TempBottomNavigation(),
     '/homeScreen': (BuildContext context) => HomeScreen(),
-
   };
 }
