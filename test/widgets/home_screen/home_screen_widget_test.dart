@@ -15,6 +15,7 @@ void main() {
   }
 
   group('Testing the Widgets in Home Screen for different scenarios', () {
+
     //CASE 1 Positive test case - Finds One Title Widget should return pass as the Widget is present
     testWidgets('Testing the Home Screen Title - Positive Scenario',
         (WidgetTester tester) async {
