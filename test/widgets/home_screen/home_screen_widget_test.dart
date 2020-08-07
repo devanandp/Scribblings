@@ -1,6 +1,5 @@
 //Type : Widget Test
-/* Testing the Model Pop up which comes on Login in the Welcome Screen
-using Key Values */
+/* Testing the Home Screen Widgets */
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
