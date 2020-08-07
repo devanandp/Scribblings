@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 45),
                   ),
                   IconButton(
-                    key: ValueKey(Keys.icon_button),
+                    key: Key(Keys.icon_button),
                     icon: Icon(Icons.favorite),
                     iconSize: 55,
                     color: _color,
